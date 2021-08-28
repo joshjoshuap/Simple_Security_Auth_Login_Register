@@ -3,9 +3,10 @@ require("dotenv").config(); // encrypt variables from .env file
 const express = require("express");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-var md5 = require("md5"); // encryption
+const bcrypt = require("bcrypt"); // hashing encryption
 
 const app = express();
+const saltRounds = 10;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -44,14 +45,18 @@ app.post("/login", (req, res) => {
     .then((foundUser) => {
       if (foundUser) {
         console.log("Email Exist");
-        if (foundUser.password === password) {
-          console.log("Successfully Login");
-          res.render("secrets"); // rendering secrets.ejs
-        } else {
-          console.log("Password Invalid");
-        }
+        bcrypt.compare(password, foundUser.password, function (err, result) {
+          if (result === true) {
+            console.log("Successfully Login");
+            res.render("secrets");
+          } else {
+            console.log("Invalid Password");
+            res.redirect("/login");
+          }
+        });
       } else {
         console.log("Email not exist");
+        res.redirect("/login");
       }
     })
     .catch((err) => {
@@ -60,20 +65,22 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  const newUser = new User({
-    email: req.body.username, // get the username data from register.ejs
-    password: md5(req.body.password), // get the password data from register.ejs - hash the password
-  });
-  newUser
-    .save()
-    .then((data) => {
-      console.log("Registered Successfully");
-      res.render("secrets"); // rendering secrets.ejs
-    })
-    .catch((err) => {
-      console.log("Register Failed");
-      console.log(err);
+  bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+    const newUser = new User({
+      email: req.body.username, // get the username data from register.ejs
+      password: hash, // get the password data from register.ejs - hash the password
     });
+    newUser
+      .save()
+      .then((data) => {
+        console.log("Registered Successfully");
+        res.render("secrets"); // rendering secrets.ejs
+      })
+      .catch((err) => {
+        console.log("Register Failed");
+        console.log(err);
+      });
+  });
 });
 
 app.listen(3000, () => {
