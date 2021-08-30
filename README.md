@@ -1,22 +1,19 @@
 # Basic-Security-Auth-Login-Register
 
+## Used:
 
-## Level 6 - Google OAuth 2.0 Authentication
+### NodeJs, ExpressJS, MongoDB, npm
 
+### Level 6 - Google OAuth 2.0 Authentication
 
-## Level 5 - Cookies and Sessions
+### Level 5 - Cookies and Sessions
 
+### Level 4 - Hashing and Salting with bcrypt
 
-## Level 4 - Hashing and Salting with bcrypt
+### Level 3 - Hashing with md5
 
+#### Add Environment Vars
 
-## Level 3 - Hashing with md5
+### Level 2 - Encryption
 
-
-### Add Environment Vars
-
-
-## Level 2 - Encryption
-
-
-## Level 1 - Username and Password Only
+### Level 1 - Username and Password Only

@@ -36,9 +36,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // connect database
-mongoose.connect("mongodb://localhost:27017/userAccountDB", {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://joshuap16:081358465220123@cluster0.sd2t9.mongodb.net/userAccountDB",
+  {
+    useNewUrlParser: true,
+  }
+);
 
 const userSchema = new mongoose.Schema({
   email: String,
@@ -65,6 +68,7 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
+// passport.js Oauth20 google
 passport.use(
   new GoogleStrategy(
     {
@@ -90,7 +94,11 @@ app.get("/", (req, res) => {
 // Sign in with google
 app.get(
   "/auth/google",
-  passport.authenticate("google", { scope: ["profile"] })
+  passport.authenticate("google", { scope: ["profile"] }),
+  function (req, res) {
+    console.log("Login Failed");
+    res.redirect("/login");
+  }
 );
 
 app.get(
@@ -121,7 +129,7 @@ app.get("/secrets", (req, res) => {
         console.log(err);
       } else {
         if (foundUser) {
-          res.render("secrets", { usersWithSecrets: foundUser });
+          res.render("secrets", { usersWithSecrets: foundUser }); // pass data to secret.ejs
         }
       }
     });
@@ -142,6 +150,7 @@ app.get("/submit", (req, res) => {
   }
 });
 
+// submit.ejs
 app.post("/submit", (req, res) => {
   const submittedSecret = req.body.secret;
 
@@ -208,6 +217,10 @@ app.get("/logout", function (req, res) {
 });
 
 // Server Runinnig
-app.listen(3000, () => {
-  console.log("Server Running in port 3000");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, () => {
+  console.log("Server is Running in  port 3000");
 });
