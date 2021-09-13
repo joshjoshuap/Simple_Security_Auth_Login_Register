@@ -1,11 +1,11 @@
 <%- include('partials/header') %>
 
 <div class="container mt-5">
-  <h1>Login</h1>
+  <h1 class="text-center">Login</h1>
 
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card">
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-6">
+      <div class="card text-center">
         <div class="card-body">
           <!-- Makes POST request to /login route -->
           <form action="/login" method="POST">
@@ -20,20 +20,21 @@
             <button type="submit" class="btn btn-dark">Login</button>
           </form>
         </div>
-      </div>
-    </div>
-
-    <div class="col-sm-4">
-      <div class="card">
         <div class="card-body">
           <a
-            class="btn btn-block btn-social btn-google"
+            class="btn btn-social btn-google"
             href="/auth/google"
             role="button"
           >
             <i class="fab fa-google"></i>
             Sign In with Google
           </a>
+        </div>
+
+        <div class="card-body">
+          <a class="btn btn-primary" href="/register">
+            Do not have Account?? Register here</a
+          >
         </div>
       </div>
     </div>
