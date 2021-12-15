@@ -1,5 +1,5 @@
 # :desktop_computer: Simple Security Auth Login Register
-### :link: App Link: https://aqueous-lowlands-70803.herokuapp.com/secrets
+### :link: App Link: https://aqueous-lowlands-70803.herokuapp.com/
 
 ### :hammer_and_wrench: Language, Tools, Technologies Used:
 - HTML
