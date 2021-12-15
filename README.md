@@ -1,4 +1,4 @@
-# :desktop_computer: Basic-Security-Auth-Login-Register
+# :desktop_computer: Basic Security Auth Login Register
 ### :link: App Link: https://aqueous-lowlands-70803.herokuapp.com/secrets
 
 ### :hammer_and_wrench: Language, Tools, Technologies Used:
