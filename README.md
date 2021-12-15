@@ -1,5 +1,5 @@
-# Basic-Security-Auth-Login-Register
-### App Link: https://aqueous-lowlands-70803.herokuapp.com/secrets
+# :desktop_computer: Basic-Security-Auth-Login-Register
+### :link: App Link: https://aqueous-lowlands-70803.herokuapp.com/secrets
 
 ### :hammer_and_wrench: Language, Tools, Technologies Used:
 - HTML
@@ -12,7 +12,7 @@
 - Bootstrap
 - OAuth
 
-#### Commit Guides
+### :magnet: Commit Guides
 - Level 6 - Google OAuth 2.0 Authentication
 - Level 5 - Cookies and Sessions
 - Level 4 - Hashing and Salting with bcrypt
