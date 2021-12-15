@@ -1,8 +1,16 @@
 # Basic-Security-Auth-Login-Register
-## Heroku: https://aqueous-lowlands-70803.herokuapp.com/secrets
+### App Link: https://aqueous-lowlands-70803.herokuapp.com/secrets
 
-### Language, Tools, Technologies Used:
-NodeJs, ExpressJS, MongoDB, npm
+### :hammer_and_wrench: Language, Tools, Technologies Used:
+- HTML
+- CSS
+- Javascipt
+- NodeJs
+- ExpressJS
+- MongoDB
+- npm
+- Bootstrap
+- OAuth
 
 #### Commit Guides
 - Level 6 - Google OAuth 2.0 Authentication
