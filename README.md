@@ -1,7 +1,9 @@
 # :desktop_computer: Simple Security Auth Login Register
-### :link: App Link: https://aqueous-lowlands-70803.herokuapp.com/
+
+### :link: App Link: https://joshuap-simpleauthlogreg.herokuapp.com/
 
 ### :hammer_and_wrench: Language, Tools, Technologies Used:
+
 - HTML
 - CSS
 - Javascipt
@@ -13,6 +15,7 @@
 - OAuth
 
 ### :magnet: Commit Guides
+
 - Level 6 - Google OAuth 2.0 Authentication
 - Level 5 - Cookies and Sessions
 - Level 4 - Hashing and Salting with bcrypt
